@@ -1,1 +1,2 @@
-console.log('hello world');
+var server = require("./server");
+server.start();
