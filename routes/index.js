@@ -3,6 +3,7 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var Movie = require('../models/movie');
+var User = require('../models/user');
 var _ = require('underscore')
 mongoose.connect('mongodb://localhost/imooc')
 /* GET home page. */
@@ -17,6 +18,12 @@ router.get('/', function(req, res, next) {
         });
     })
 });
+
+//signup
+router.post('/user/signup', function(req,res) {
+    var _user = req.body.user;
+    console.log(_user);
+})
 
 router.get('/movie/:id', function(req, res, next) {
     var id = req.params.id;
